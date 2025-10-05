@@ -38,6 +38,10 @@ body {
   overflow: hidden;
 }
 
+.gradient-bg-1{
+  background: radial-gradient(circle at center, #0c1326, #000000);
+}
+
 
 @keyframes app-initial-animation {
   0% {

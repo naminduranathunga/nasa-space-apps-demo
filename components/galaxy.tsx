@@ -4,7 +4,7 @@ import { useTransform, useScroll, useTime } from "framer-motion";
 import { degreesToRadians, progress, mix } from "popmotion";
 
 //const color = "#111111";
-const color = "#ffffff";
+const color = "#8c8c8c";
 
 const Icosahedron = () => (
     <mesh rotation-x={0.35}>

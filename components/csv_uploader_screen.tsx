@@ -3,11 +3,13 @@ import { useCallback, useState } from 'react';
 import { FiUpload } from "react-icons/fi";
 import predictFromModel from '@/lib/predict_from_model';
 import ProgressBar from './progress_bar';
+import Link from 'next/link';
 
 function StateIdle({handleFileChange}:{handleFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void}){
     return (
         <>
-            <h2 className="text-black text-lg font-semibold mb-4 text-center">Download sample csv file and add the input data according to the format.</h2>
+            <h2 className="text-black text-lg font-semibold mb-2 text-center">Download sample csv file and add the input data according to the format.</h2>
+            <Link href="/KOISample.csv" download className="mb-6 px-4 py-0 text-purple-500 rounded hover:text-purple-600 transition-colors">Download Sample CSV</Link>
             <div className="csv-uploader p-4 w-full flex flex-col items-center relative min-h-48 border-2 border-dashed border-purple-300 rounded-lg cursor-pointer hover:border-purple-500 transition-colors hover:bg-purple-100">
                 <FiUpload className="text-accent text-6xl mb-4" />
                 {/*<DotLottieReact src="/anims/Rocket Loader.lottie" loop autoplay className="w-24 h-24 mb-4" /> */}
@@ -76,11 +78,11 @@ function StateCompleted({results, downloadResultsAsCSV, resetFn}:{results: Model
                     <td className="px-6 py-3 text-sm text-gray-700 border-b">{res.kepler_name}</td>
                     <td
                     className={`px-6 py-3 text-sm font-medium border-b ${
-                        res.result === "Positive"
+                        res.result === "CONFIRMED"
                         ? "text-emerald-600"
-                        : res.result === "Negative"
+                        : res.result === "FALSE POSITIVE"
                         ? "text-rose-600"
-                        : "text-gray-700"
+                        : "text-yellow-600"
                     }`}
                     >
                     {res.result}
