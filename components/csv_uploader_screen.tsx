@@ -1,6 +1,7 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useCallback, useState } from 'react';
 import { FiUpload } from "react-icons/fi";
+import MultiStepProgressBar from './multiple_progress_bar';
 
 function StateIdle({handleFileChange}:{handleFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void}){
     return (
@@ -125,6 +126,7 @@ export default function CSVFileUploader() {
 
     return (
         <div className="flex flex-col items-center w-full p-4">
+            <MultiStepProgressBar page={1} />
             {uploaderState === 'idle' && <StateIdle handleFileChange={handleFileChange} />}
             {uploaderState === 'file-selected' && selectedFileInfo && <StateFileSelected fileInfo={selectedFileInfo} onClickProceed={handleFileUploadAndProcessBtnClick} />}
             {uploaderState === 'processing' && <StateFileUploading /> }
