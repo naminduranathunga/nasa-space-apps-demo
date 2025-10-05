@@ -34,7 +34,7 @@ export default function HeroSection() {
         
         <div className="h-screen w-full bg-black flex items-center justify-center relative overflow-hidden">
             {/*<DotLottieReact src="/anims/Space Areal.lottie" loop autoplay className="h-full w-full object-cover opacity-20" />*/}
-            <header className="absolute w-full top-0 left-0 z-20 flex items-center justify-center py-2">
+            <header className="absolute w-full top-0 left-0 z-20 flex items-center justify-center py-2 animate-fade-in-down">
                 <Link href="/" className="p-4 text-white text-lg font-medium hover:text-yellow-300 transition-colors">Home</Link>
                 <Link href="/#app" className="p-4 text-white text-lg font-medium hover:text-yellow-300 transition-colors">App</Link>
                 <Link href="/#how-to-use" className="p-4 text-white text-lg font-medium hover:text-yellow-300 transition-colors">How to use</Link>
